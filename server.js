@@ -8,8 +8,10 @@ const server = http.createServer(app);
 const io = new Server(server, {
   cors: { origin: "*" }
 });
-
-app.use(express.static("public"));
+app.get("/", (req, res) => {
+  res.send("Server is running");
+});
+//app.use(express.static("public"));
 
 io.on("connection", (socket) => {
   console.log("User connected");
