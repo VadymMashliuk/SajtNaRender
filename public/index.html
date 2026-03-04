@@ -12,7 +12,7 @@
   <div class="col">
     <div class="card h-100">
         Північна Америка
-        <p></p>
+        <b id="naselennaPivnicnojiAmeryky">617300000</b>
     </div>
   </div>
   <div class="col">
@@ -54,6 +54,15 @@
             number.textContent = value;
         });
 
+        const naselennaPivnicnojiAmeryky = document.getElementById("naselennaPivnicnojiAmeryky");
+        socket.on("zbilsennaNaselennaPivnicnojiAmeryky", (value) =>
+        {
+            naselennaPivnicnojiAmeryky.textContent = value;
+        });
+        socket.on("zmensennaNaselennaPivnicnojiAmeryky", (value) =>
+        {
+            naselennaPivnicnojiAmeryky.textContent = value;
+        });
         const naselennaJevropy = document.getElementById("naselennaJevropy");
         socket.on("zbilsennaNaselennaJevropy", (value) =>
         {
