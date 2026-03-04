@@ -18,6 +18,7 @@
   <div class="col">
     <div class="card h-100">
         Південна Америка
+        <b id="naselennaPivdennojiAmeryky">439500000</b>
     </div>
   </div>
   <div class="col">
@@ -62,6 +63,15 @@
         socket.on("zmensennaNaselennaPivnicnojiAmeryky", (value) =>
         {
             naselennaPivnicnojiAmeryky.textContent = value;
+        });
+        const naselennaPivdennojiAmeryky = document.getElementById("naselennaPivdennojiAmeryky");
+        socket.on("zbilsennaNaselennaPivdennojiAmeryky", (value) =>
+        {
+            naselennaPivdennojiAmeryky.textContent = value;
+        });
+        socket.on("zmensennaNaselennaPivdennojiAmeryky", (value) =>
+        {
+            naselennaPivdennojiAmeryky.textContent = value;
         });
         const naselennaJevropy = document.getElementById("naselennaJevropy");
         socket.on("zbilsennaNaselennaJevropy", (value) =>

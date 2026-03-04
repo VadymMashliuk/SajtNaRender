@@ -27,6 +27,15 @@ setInterval(() => {
     naselennaPivnicnojiAmeryky--;
     io.emit("zmensennaNaselennaPivnicnojiAmeryky", naselennaPivnicnojiAmeryky);
 }, 2400);
+let naselennaPivdennojiAmeryky = 439500000;
+setInterval(() => {
+    naselennaPivdennojiAmeryky++;
+    io.emit("zbilsennaNaselennaPivdennojiAmeryky", naselennaPivdennojiAmeryky);
+}, 2182);
+setInterval(() => {
+    naselennaPivdennojiAmeryky--;
+    io.emit("zmensennaNaselennaPivdennojiAmeryky", naselennaPivdennojiAmeryky);
+}, 3429);
 let naselennaJevropy = 732800000;
 setInterval(() => {
     naselennaJevropy++;
