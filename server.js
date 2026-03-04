@@ -21,7 +21,7 @@ setInterval(() => {
 let naselennaAfryky = 1216100000;
 setInterval(() => {
     naselennaAfryky += 11;
-    io.emit("zbilsennaNaselennaAfryky");
+    io.emit("zbilsennaNaselennaAfryky", naselennaAfryky);
 }, 8000);
 
 io.on("connection", (socket) => {
