@@ -18,6 +18,12 @@ setInterval(() => {
     io.emit("counterUpdate", counter);
 }, 1000);
 
+let naselennaAfryky = 1216100000;
+setInterval(() => {
+    naselennaAfryky += 11;
+    io.emit("zbilsennaNaselennaAfryky");
+}, 8000);
+
 io.on("connection", (socket) => {
     console.log("Client connected");
 

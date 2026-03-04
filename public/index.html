@@ -11,6 +11,7 @@
   <div class="col">
     <div class="card h-100">
         Північна Америка
+        <p></p>
     </div>
   </div>
   <div class="col">
@@ -28,6 +29,17 @@
         Азія
     </div>
   </div>
+  <div class="col">
+    <div class="card h-100">
+        Африка
+        <p id="naselennaAfryky">1216100000</p>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card h-100">
+        Океанія
+    </div>
+  </div>
 </div>
     <h2 id="number" class="container">0</h2>
     <script src="https://cdn.socket.io/4.7.5/socket.io.js"></script>
@@ -37,6 +49,11 @@
 
         socket.on("counterUpdate", (value) => {
             number.textContent = value;
+        });
+
+        const naselennaAfryky = document.getElementById("naselennaAfryky");
+        socket.on("zbilsennaNaselennaAfryky", (value) => {
+            naselennaAfryky.textContent = value;
         });
     </script>
 </body>
