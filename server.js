@@ -13,6 +13,9 @@ app.use(express.static("public"));
 
 io.on("connection", (socket) => {
   console.log("User connected");
+  socket.on("message", (msg) => {
+    io.emit("message", msg);
+  })
 });
 
 const PORT = process.env.PORT || 3000;
