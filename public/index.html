@@ -3,34 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Live Counter</title>
 </head>
 <body>
-    <h2>Простий чат</h2>
-    <ul id="messages"></ul>
-    <form id="form">
-        <input id="input" autocomplete="off" placeholder="Введіть текст"/>
-        <button type="submit">Відправити</button>
-    </form>
-    
-    <script src="https://cdn.socket.io/4.7.5/socket.io.js"></script>
+    <h1>Число в реальному часі</h1>
+    <h2 id="number">0</h2>
+    <script src="/socket.io.js"></script>
     <script>
         const socket = io();
-        const form = document.getElementById("form");
-        const input = document.getElementById("input");
-        const messages = document.getElementById("messages");
-        form.addEventListener("submit", function(e) {
-    e.preventDefault();
-    if (input.value) {
-      socket.emit("message", input.value);
-      input.value = "";
-    }
-  });
-  socket.on("message", function(msg) {
-    const li = document.createElement("li");
-    li.textContent = msg;
-    messages.appendChild(li);
-  });
+        const number = document.getElementById("number");
+
+        socket.on("counterUpdate", (value) => {
+            number.textContent = value;
+        });
     </script>
 </body>
 </html>
