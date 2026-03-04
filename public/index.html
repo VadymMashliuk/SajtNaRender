@@ -7,11 +7,12 @@
 </head>
 <body>
     <h2>Простий чат</h2>
+    <ul id="messages"></ul>
     <form id="form">
         <input id="input" autocomplete="off" placeholder="Введіть текст"/>
         <button type="submit">Відправити</button>
     </form>
-    <ul id="messages"></ul>
+    
     <script src="/socket.io.js"></script>
     <script>
         const socket = io();
