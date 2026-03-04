@@ -17,16 +17,24 @@ setInterval(() => {
     counter++;
     io.emit("counterUpdate", counter);
 }, 1000);
-
+let naselennaAziji = 4342300000;
+setInterval(() => {
+    naselennaAziji++;
+    io.emit("zbilsennaNaselennaAziji", naselennaAziji);
+}, 511);
+setInterval(() => {
+    naselennaAziji--;
+    io.emit("zmensennaNaselennaAziji", naselennaAziji);
+}, 1143);
 let naselennaAfryky = 1216100000;
 setInterval(() => {
-    naselennaAfryky += 11;
+    naselennaAfryky++;
     io.emit("zbilsennaNaselennaAfryky", naselennaAfryky);
-}, 8000);
+}, 727);
 setInterval(() => {
-    naselennaAfryky -= 7;
+    naselennaAfryky--;
     io.emit("zmensennaNaselennaAfryky", naselennaAfryky);
-}, 12000)
+}, 583);
 
 io.on("connection", (socket) => {
     console.log("Client connected");

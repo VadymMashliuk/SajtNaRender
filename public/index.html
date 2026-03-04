@@ -8,6 +8,7 @@
 </head>
 <body>
 <div class="row row-cols-1 row-cols-md-3 g-4">
+    Оновлення даних в реальному часі
   <div class="col">
     <div class="card h-100">
         Північна Америка
@@ -27,13 +28,13 @@
   <div class="col">
     <div class="card h-100">
         Азія
+        <b id="naselennaAziji">4342300000</b>
     </div>
   </div>
   <div class="col">
     <div class="card h-100">
         Африка
-        <br>Оновлення даних кожних 8 секунд
-        <p id="naselennaAfryky">1216100000</p>
+        <b id="naselennaAfryky">1216100000</b>
     </div>
   </div>
   <div class="col">
@@ -52,13 +53,25 @@
             number.textContent = value;
         });
 
+        const naselennaAziji = document.getElementById("naselennaAziji");
+        socket.on("zbilsennaNaselennaAziji", (value) =>
+        {
+            naselennaAziji.textContent = value;
+        });
+        socket.on("zmensennaNaselennaAziji", (value) =>
+        {
+            naselennaAziji.textContent = value;
+        });
         const naselennaAfryky = document.getElementById("naselennaAfryky");
-        socket.on("zbilsennaNaselennaAfryky", (value) => {
+        socket.on("zbilsennaNaselennaAfryky", (value) =>
+        {
             naselennaAfryky.textContent = value;
         });
-        socket.on("zmensennaNaselennaAfryky", (value) => {
+        socket.on("zmensennaNaselennaAfryky", (value) =>
+        {
             naselennaAfryky.textContent = value;
         });
+        
     </script>
 </body>
 </html>
