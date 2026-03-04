@@ -23,6 +23,7 @@
   <div class="col">
     <div class="card h-100">
         Європа
+        <b id="naselennaJevropy">732800000</b>
     </div>
   </div>
   <div class="col">
@@ -53,6 +54,15 @@
             number.textContent = value;
         });
 
+        const naselennaJevropy = document.getElementById("naselennaJevropy");
+        socket.on("zbilsennaNaselennaJevropy", (value) =>
+        {
+            naselennaJevropy.textContent = value;
+        });
+        socket.on("zmensennaNaselennaJevropy", (value) =>
+        {
+            naselennaJevropy.textContent = value;
+        });
         const naselennaAziji = document.getElementById("naselennaAziji");
         socket.on("zbilsennaNaselennaAziji", (value) =>
         {
