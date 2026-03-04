@@ -23,6 +23,10 @@ setInterval(() => {
     naselennaAfryky += 11;
     io.emit("zbilsennaNaselennaAfryky", naselennaAfryky);
 }, 8000);
+setInterval(() => {
+    naselennaAfryky -= 7;
+    io.emit("zmensennaNaselennaAfryky", naselennaAfryky);
+}, 12000)
 
 io.on("connection", (socket) => {
     console.log("Client connected");

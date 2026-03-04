@@ -32,6 +32,7 @@
   <div class="col">
     <div class="card h-100">
         Африка
+        <br>Оновлення даних кожних 8 секунд
         <p id="naselennaAfryky">1216100000</p>
     </div>
   </div>
@@ -53,6 +54,9 @@
 
         const naselennaAfryky = document.getElementById("naselennaAfryky");
         socket.on("zbilsennaNaselennaAfryky", (value) => {
+            naselennaAfryky.textContent = value;
+        });
+        socket.on("zmensennaNaselennaAfryky", (value) => {
             naselennaAfryky.textContent = value;
         });
     </script>
